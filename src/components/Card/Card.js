@@ -7,14 +7,14 @@ import instagramIcon from "../../images/icon_instagram.png"
 import githubIcon from "../../images/icon_github.png"
 import "./Card.css"
 
-function Card() {
+function Card(props) {
     return(
         <section className="card">
-            <img className="card--img" src={faceImg} alt="" />
+            <img className="card--img" src={props.avatar} alt="" />
             <div className="card--content">
-                <h1 className="card--content--name">Jane Doe</h1>
-                <p className="card--content--title">Frontend Developer</p>
-                <p className="card--content--website">janedoe.website</p>
+                <h1 className="card--content--name">{props.fullName}</h1>
+                <p className="card--content--title">{props.title}</p>
+                <p className="card--content--website">{props.email}</p>
                 <div className="card--content--buttons">
                     <button className="card--content--buttons--item email" type="button">
                         <img src={emailIcon} width="16px" />
@@ -27,9 +27,9 @@ function Card() {
                 </div>
                 <div className="card--content--sentence">
                     <h2 className="card--content--h2">About</h2>
-                    <p>I am a frontend developer with a particular interest in making things simple and automating daily tasks. I try to keep up with security and best practices, and am always looking for new things to learn.</p>
+                    <p>{props.about}</p>
                     <h2 className="card--content--h2">Interests</h2>
-                    <p>Food expert. Music scholar. Reader. Internet fanatic. Bacon buff. Entrepreneur. Travel geek. Pop culture ninja. Coffee fanatic.</p>
+                    <p>{props.interests}</p>
                 </div>
             </div>
             <div className="card--link">

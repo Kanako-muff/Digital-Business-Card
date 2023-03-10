@@ -4,7 +4,7 @@ import data from "./assets/data/data.json"
 
 function App() {
 
-  const cardElements = data.map((user) => <Card key={user.fullName} {...user} />);
+  const cardElements = data.map((user) => <Card key={user.id} {...user} />);
 
   return (
     <div className="App">
